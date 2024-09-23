@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: configuration-service
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Just-StyX/micro-service-ecommerce-configuration.git
+          searchPath: files
+
+server:
+  port: 8070
