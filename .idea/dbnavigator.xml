@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DBNavigator.Project.DDLFileAttachmentManager">
+    <mappings />
+    <preferences />
+  </component>
+  <component name="DBNavigator.Project.DataEditorManager">
+    <record-view-column-sorting-type value="BY_INDEX" />
+    <value-preview-text-wrapping value="true" />
+    <value-preview-pinned value="false" />
+  </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
@@ -14,8 +23,21 @@
       <console name="Order Service" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
+  <component name="DBNavigator.Project.DatabaseEditorStateManager">
+    <last-used-providers />
+  </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatabaseSessionManager">
+    <connection id="89d8c73f-b2d6-4f95-ab5a-a043ee14e5b1" />
+    <connection id="287a8680-c32d-43df-96ef-42e1746b6f50" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="287a8680-c32d-43df-96ef-42e1746b6f50" dataset="public.orders" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="287a8680-c32d-43df-96ef-42e1746b6f50" dataset="public.customer_line" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="89d8c73f-b2d6-4f95-ab5a-a043ee14e5b1" dataset="public.product" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="89d8c73f-b2d6-4f95-ab5a-a043ee14e5b1" dataset="public.category" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
