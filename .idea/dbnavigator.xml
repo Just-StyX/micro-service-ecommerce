@@ -243,7 +243,7 @@
           <description value="Payment" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="16.4" />
           <driver-source value="BUNDLED" />
           <driver-library value="" />
           <driver value="" />

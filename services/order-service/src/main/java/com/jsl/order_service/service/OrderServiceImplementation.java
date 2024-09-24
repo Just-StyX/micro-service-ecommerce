@@ -15,6 +15,7 @@ import com.jsl.order_service.product.PurchaseResponse;
 import com.jsl.order_service.util.OrderMapper;
 import com.jsl.order_service.util.OrderRequest;
 import com.jsl.order_service.util.OrderResponse;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,7 @@ public class OrderServiceImplementation implements OrderService{
     private final KafkaOrderProducer kafkaOrderProducer;
     private final OrderLineService orderLineService;
     @Override
+    @CircuitBreaker(name = "createOrder", fallbackMethod = "circuitBreaker")
     public Integer createOrder(OrderRequest orderRequest) {
         CustomerResponse customer = customerClient.findCustomerById(orderRequest.customerId()).orElseThrow();
         List<PurchaseResponse> purchaseResponses = productClient.purchaseProducts(orderRequest.products());
@@ -66,5 +68,9 @@ public class OrderServiceImplementation implements OrderService{
     @Override
     public OrderResponse findById(Integer id) {
         return orderRepository.findById(id).map(OrderMapper::toOrderResponse).orElseThrow();
+    }
+
+    private Integer circuitBreaker(OrderRequest orderRequest, Throwable throwable) {
+        return -1;
     }
 }
