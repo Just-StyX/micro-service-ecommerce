@@ -29,6 +29,21 @@ services:
       - micro-services-ecommerce
     restart: unless-stopped
 
+  payment-postgres:
+    container_name: micro-service-payment-postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: payment
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5434:5432"
+    networks:
+      - micro-services-ecommerce
+    restart: unless-stopped
+
   customer-mongodb:
     image: mongo
     container_name: micro-service-customer-mongo_db
